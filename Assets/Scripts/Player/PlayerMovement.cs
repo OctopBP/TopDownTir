@@ -30,7 +30,7 @@ public class PlayerMovement : MonoBehaviour
  		var mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 		var direction = mousePos - transform.position;
 
-		// Переводим в углв
+		// Переводим в углы
 		var angle = Mathf.Atan(direction.y / direction.x) * Mathf.Rad2Deg;
 		angle += 90 - Mathf.Sign(direction.x) * 90;
 

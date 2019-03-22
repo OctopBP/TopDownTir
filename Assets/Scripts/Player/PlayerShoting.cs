@@ -16,6 +16,7 @@ public class PlayerShoting : MonoBehaviour
 
 	[Header("GUI")]
 	[SerializeField] private TextMeshProUGUI weaponNameText;
+	[SerializeField] private TextMeshProUGUI weaponNumberText;
 	[SerializeField] private TextMeshProUGUI reloadTimeText;
 	[SerializeField] private Image weaponIcon;
 
@@ -34,16 +35,18 @@ public class PlayerShoting : MonoBehaviour
 
 		// Выбор оружия
 		if (Input.GetKeyDown(KeyCode.Q)) {
-			selectedWeaponNumber++;
+			selectedWeaponNumber += weapons.Count - 1;
 		}
 		if (Input.GetKeyDown(KeyCode.E)) {
-			selectedWeaponNumber += weapons.Count - 1;
+			selectedWeaponNumber++;
 		}
 		selectedWeaponNumber %= weapons.Count;
 
 		// GUI
 		weaponNameText.text = selectedWeapon.WeaponName;
+		weaponNumberText.text = (selectedWeaponNumber + 1) + "/" + weapons.Count;
 		weaponIcon.sprite = selectedWeapon.Icon;
+
 		if (selectedWeapon.timeToReload <= 0) {
 			reloadTimeText.text = selectedWeapon.ReloadTime.ToString("0.0");
 			reloadTimeText.color = Color.white;

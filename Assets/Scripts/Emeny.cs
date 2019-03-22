@@ -26,7 +26,7 @@ public class Emeny : MonoBehaviour
 		if (Mathf.Abs(direction.x) > horzExtent || Mathf.Abs(direction.y) > vertExtent) {
 			marker.SetActive(true);
 
-			// Переводим в углв
+			// Переводим в углы
 			var angle = Mathf.Atan(direction.y / direction.x) * Mathf.Rad2Deg;
 			angle += 90 - Mathf.Sign(direction.x) * 90;
 
