@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using TMPro;
+﻿using UnityEngine;
 
 public class Emeny : MonoBehaviour
 {
@@ -26,9 +23,8 @@ public class Emeny : MonoBehaviour
 		if (Mathf.Abs(direction.x) > horzExtent || Mathf.Abs(direction.y) > vertExtent) {
 			marker.SetActive(true);
 
-			// Переводим в углы
-			var angle = Mathf.Atan(direction.y / direction.x) * Mathf.Rad2Deg;
-			angle += 90 - Mathf.Sign(direction.x) * 90;
+			// Получаем угол
+			var angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 
 			// Разворачиваем маркер
 			marker.transform.eulerAngles = new Vector3(0, 0, angle);

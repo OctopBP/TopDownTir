@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -29,10 +27,9 @@ public class PlayerMovement : MonoBehaviour
 		// Получаем направление
  		var mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 		var direction = mousePos - transform.position;
-
-		// Переводим в углы
-		var angle = Mathf.Atan(direction.y / direction.x) * Mathf.Rad2Deg;
-		angle += 90 - Mathf.Sign(direction.x) * 90;
+		
+		// Получаем угол
+		var angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 
 		transform.eulerAngles = new Vector3(0, 0, angle);
 	}

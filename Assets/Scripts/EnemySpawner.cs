@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
@@ -37,8 +35,9 @@ public class EnemySpawner : MonoBehaviour
 
 		// Разворачиваем мишень к игроку
 		var direction = spawnPosition - cam.transform.position;
-		var angle = Mathf.Atan(direction.y / direction.x) * Mathf.Rad2Deg;
-		angle -= 90 + Mathf.Sign(direction.x) * 90;
+
+		// Получаем угол
+		var angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 
 		// Создаём новую мишень
 		Instantiate(enemyPrefab, spawnPosition, Quaternion.Euler(new Vector3(0, 0, angle)));
