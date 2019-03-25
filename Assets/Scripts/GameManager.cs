@@ -6,10 +6,12 @@ public class GameManager : MonoBehaviour
 	[SerializeField] private TextMeshProUGUI counterText;
 	private int scores;
 
-	public static GameManager Instance;
+	private static GameManager Instance;
+	public static GameManager instance => Instance;
 
     private void Start() {
-		Instance = this;
+		if (Instance == null)
+			Instance = this;
 
 		scores = 0;
 		counterText.text = "0";

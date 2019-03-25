@@ -42,7 +42,7 @@ public class Emeny : MonoBehaviour
 	private void OnTriggerEnter2D(Collider2D other) {
 		if (other.gameObject.tag == "Bullet") {
 			// Добавляем одно очко
-			GameManager.Instance.AddScore();
+			GameManager.instance.AddScore();
 
 			// Создаём текст "+1"
 			Instantiate(scorePrefab, transform.position, Quaternion.identity);

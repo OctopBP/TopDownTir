@@ -14,8 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponName: Rifle
   icon: {fileID: 21300000, guid: ca39a92828da54712b539c8de4a6188b, type: 3}
-  bulletPefab: {fileID: 6280450951515417846, guid: 6c6ff3a1ad7804944afc3e5384e6aaa6,
+  bulletPefab: {fileID: 1400727411472755249, guid: 6c6ff3a1ad7804944afc3e5384e6aaa6,
     type: 3}
   reloadTime: 1
-  timeToReload: 0
   shotType: 0
+  bulletsPerShot: 1
+  maxBulletsCount: 2

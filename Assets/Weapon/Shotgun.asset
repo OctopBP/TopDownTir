@@ -14,8 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponName: Shotgun
   icon: {fileID: 21300000, guid: e8a56bf5d52d54fcf9459589b815c342, type: 3}
-  bulletPefab: {fileID: 6280450951515417846, guid: e761fef9f7191442c86967f0407cf4a6,
+  bulletPefab: {fileID: 1400727411472755249, guid: e761fef9f7191442c86967f0407cf4a6,
     type: 3}
   reloadTime: 2
-  timeToReload: 0
   shotType: 2
+  bulletsPerShot: 5
+  maxBulletsCount: 10
