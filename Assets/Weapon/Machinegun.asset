@@ -9,14 +9,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a12294e40b6544fe812455a9daf1091, type: 3}
+  m_Script: {fileID: 11500000, guid: 4b088e28fc22d4c10aeccfc2445ca477, type: 3}
   m_Name: Machinegun
   m_EditorClassIdentifier: 
-  weaponName: Machinegun
+  weaponName: Mashingun
   icon: {fileID: 21300000, guid: e1b31b32ce4784cf980b8eb29f747432, type: 3}
-  bulletPefab: {fileID: 1400727411472755249, guid: 12f4f60b8a1264b1f819be843b5bca4e,
+  projectilePefab: {fileID: 1400727411472755249, guid: 12f4f60b8a1264b1f819be843b5bca4e,
     type: 3}
   reloadTime: 1.5
   shotType: 1
-  bulletsPerShot: 3
-  maxBulletsCount: 6
+  projectilesPerShot: 3
+  maxProjectileCount: 10

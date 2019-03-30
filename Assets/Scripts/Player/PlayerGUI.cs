@@ -2,6 +2,8 @@
 using UnityEngine;
 using UnityEngine.UI;
 
+#pragma warning disable 0649
+
 public class PlayerGUI : MonoBehaviour
 {
 	[Header("GUI")]
@@ -12,18 +14,19 @@ public class PlayerGUI : MonoBehaviour
 
 	private PlayerShooting playerShooting;
 
-	private void Start() {
+	private void Awake() {
 		playerShooting = GetComponent<PlayerShooting>();
 		playerShooting.WeaponChanged += UpdateGUI;
 	}
 
-	public void UpdateGUI(WeaponBehavior selectedWeapon, int selectedWeaponNumber, int weaponsCount) {
+	public void UpdateGUI(IWeapon selectedWeapon, int selectedWeaponNumber, int weaponsCount) {
 		weaponNameText.text = selectedWeapon.WeaponData.WeaponName;
 		weaponNumberText.text = string.Format("{0}/{1}", selectedWeaponNumber + 1, weaponsCount);
 		weaponIcon.sprite = selectedWeapon.WeaponData.Icon;
 	}
 
 	private void Update() {
+		// Reload time gui
 		if (playerShooting.selectedWeapon.TimeToReload <= 0) {
 			reloadTimeText.text = playerShooting.selectedWeapon.WeaponData.ReloadTime.ToString("0.0");
 			reloadTimeText.color = Color.white;

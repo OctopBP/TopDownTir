@@ -14,7 +14,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
 	private void Movement() {
-		var moveDirection = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0);
+		var moveDirection = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
 
 		// Чтобы перосонаж двигался по диагонали не быстрее чем вверх-вниз и вправо-влево
 		moveDirection = Vector3.ClampMagnitude(moveDirection, 1);
@@ -26,11 +26,10 @@ public class PlayerMovement : MonoBehaviour
 	private void Rotation() {
 		// Получаем направление
  		var mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-		var direction = mousePos - transform.position;
+		var direction = transform.DirectionTo(mousePos);
 		
 		// Получаем угол
-		var angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-
+		var angle = direction.AngleXY();
 		transform.eulerAngles = new Vector3(0, 0, angle);
 	}
 }

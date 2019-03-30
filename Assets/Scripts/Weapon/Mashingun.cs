@@ -11,8 +11,8 @@ public class Mashingun: WeaponBehavior
 		var shotDelay = .1f;
 
 		// Создаём пули с промежутком в shotDelay
-		for (int i = 0; i < weaponData.BulletsPerShot; i++) {
-			SetupBullet(transform.position, transform.rotation);
+		for (int i = 0; i < weaponData.ProjectilesPerShot; i++) {
+			SetupProjectile(transform.position, transform.rotation);
 			yield return new WaitForSeconds(shotDelay);
 		}
 	}

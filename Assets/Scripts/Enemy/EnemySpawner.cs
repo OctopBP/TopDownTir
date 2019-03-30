@@ -1,4 +1,7 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
+
+#pragma warning disable 0649
 
 public class EnemySpawner : MonoBehaviour
 {
@@ -7,7 +10,8 @@ public class EnemySpawner : MonoBehaviour
 	[Header("Интервал появления новых мишений")]
 	[SerializeField] private float interval = 3;
 
-	[Header("Максимальное расстояние новой мишени от игрока")]
+	[Header("Расстояние спавна от игрока")]
+	[SerializeField] float minDistanceToSpawn = 0;
 	[SerializeField] float maxDistanceToSpawn = 100;
 
 	// Камера всегда привязана к игроку, поэтому берём позицию с неё
@@ -19,6 +23,7 @@ public class EnemySpawner : MonoBehaviour
 	}
 
     private void Update() {
+		// Спавним врага
 		if (time <= 0) {
 			SpawnEnemy();
 			time = interval;
@@ -28,16 +33,18 @@ public class EnemySpawner : MonoBehaviour
     }
 
 	private void SpawnEnemy() {
-		// Пролучаем рандомные коардинаты в пределах maxDistanceToSpawn
-		var randomX = Random.Range(-maxDistanceToSpawn, maxDistanceToSpawn);
-		var randomY = Random.Range(-maxDistanceToSpawn, maxDistanceToSpawn);
+		// Пролучаем рандомные коардинаты
+		var random = new Random();
+		var randomX = random.MirrorRange(minDistanceToSpawn, maxDistanceToSpawn);
+		var randomY = random.MirrorRange(minDistanceToSpawn, maxDistanceToSpawn);
+
 		var spawnPosition = cam.transform.position + new Vector3(randomX, randomY, -cam.transform.position.z);
 
 		// Разворачиваем мишень к игроку
 		var direction = spawnPosition - cam.transform.position;
 
 		// Получаем угол
-		var angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+		var angle = direction.AngleXY();
 
 		// Создаём новую мишень
 		Instantiate(enemyPrefab, spawnPosition, Quaternion.Euler(new Vector3(0, 0, angle)));

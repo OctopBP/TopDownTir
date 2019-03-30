@@ -1,16 +1,15 @@
+using UnityEngine;
+
 public class Shotgun: WeaponBehavior
 {
 	public override void Shot() {
 		// Создаём веер пуль
-		for (int i = 0; i < weaponData.BulletsPerShot; i++) {
-			var bulletRotation = transform.rotation;
-			var angles = bulletRotation.eulerAngles;
+		for (int i = 0; i < weaponData.ProjectilesPerShot; i++) {
 			var deltaAngle = 5f;
+			var angleZ = deltaAngle * ((float) i - (((float) weaponData.ProjectilesPerShot - 1) / 2f));
+			var projectileRotation = transform.eulerAngles.With(z: angleZ);
 
-			angles.z += deltaAngle * ((float) i - (((float) weaponData.BulletsPerShot - 1) / 2f));
-			bulletRotation.eulerAngles = angles;
-
-			SetupBullet(transform.position, bulletRotation);
+			SetupProjectile(transform.position, Quaternion.Euler(projectileRotation));
 		}
 	}
 }

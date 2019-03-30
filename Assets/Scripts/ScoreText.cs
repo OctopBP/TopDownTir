@@ -3,22 +3,27 @@ using TMPro;
 
 public class ScoreText : MonoBehaviour
 {
-	[SerializeField] private float lifrTime;
+	[SerializeField] private float lifeTime = 1;
+	[SerializeField] private string template = "+{0}";
 
-	private float time;
 	private TextMeshPro text;
+	private float time;
 
-    private void Start() {
+    private void Awake() {
         text = GetComponent<TextMeshPro>();
-		time = lifrTime;
+		time = lifeTime;
 
-		Destroy(gameObject, lifrTime);
-    }
+		Destroy(gameObject, lifeTime);
+	}
 
     private void Update() {
         time -= Time.deltaTime;
+		text.alpha = time / lifeTime;
 		
 		transform.position += Vector3.up * Time.deltaTime;
-		text.alpha = time/ lifrTime;
     }
+	
+	public void SetValue(int score) {
+		text.text = string.Format(template, score);
+	}
 }

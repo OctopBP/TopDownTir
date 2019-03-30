@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b088e28fc22d4c10aeccfc2445ca477, type: 3}
+  m_Name: Bazooka
+  m_EditorClassIdentifier: 
+  weaponName: Bazooka
+  icon: {fileID: 21300000, guid: ce3cb2ca8a1114aaebb0ed6c25c13c2f, type: 3}
+  projectilePefab: {fileID: 210307927345096206, guid: de2e1dabce4b34bcc85287a14111a666,
+    type: 3}
+  reloadTime: 10
+  shotType: 0
+  projectilesPerShot: 1
+  maxProjectileCount: 3

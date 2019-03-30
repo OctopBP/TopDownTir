@@ -11,11 +11,11 @@ GameObject:
   - component: {fileID: 8609902178981313169}
   - component: {fileID: 3681336599383447081}
   - component: {fileID: 7181415716342543133}
-  - component: {fileID: 1400727411472755249}
+  - component: {fileID: 5573514772007850768}
   - component: {fileID: 368372877240611708}
   m_Layer: 0
   m_Name: RifleBullet
-  m_TagString: Bullet
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -71,7 +71,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 4ac40c6927eb34819904296784bdd875, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1bcb3d0753e5240b7af9ff376e141e54, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -99,16 +99,16 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.25, y: 0.03}
+    oldSize: {x: 0.32, y: 0.04}
     newSize: {x: 0.06, y: 0.03}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.25, y: 0.03}
+  m_Size: {x: 0.32, y: 0.04}
   m_EdgeRadius: 0
---- !u!114 &1400727411472755249
+--- !u!114 &5573514772007850768
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -117,11 +117,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 6280450951515417846}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 650db7b3002e3493db7d9bb082cb024d, type: 3}
+  m_Script: {fileID: 11500000, guid: 6eb573e429d6c4ad28347c59d3fe7452, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 30
-  lifeTime: 1
+  enemyTagName: Enemy
+  speed: 25
 --- !u!50 &368372877240611708
 Rigidbody2D:
   serializedVersion: 4

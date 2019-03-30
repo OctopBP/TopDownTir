@@ -1,17 +1,24 @@
 ﻿using UnityEngine;
 
+#pragma warning disable 0649
+
 [CreateAssetMenu(fileName = "Weapon", menuName = "Weapon", order = 51)]
-public class Weapon : ScriptableObject
+public class WeaponData : ScriptableObject
 {
 	[Space(15)]
 	[SerializeField] private string weaponName;
+	public string WeaponName => weaponName;
+
 	[SerializeField] private Sprite icon;
+	public Sprite Icon => icon;
 
 	[Space(15)]
-	[SerializeField] private Bullet bulletPefab;
+	[SerializeField] private Projectile projectilePefab;
+	public Projectile ProjectilePefab => projectilePefab;
 
 	[Space(15)]
 	[SerializeField] private float reloadTime;
+	public float ReloadTime => reloadTime;
 
 	public enum ShotType {
 		Single,	// Одиночный
@@ -19,23 +26,14 @@ public class Weapon : ScriptableObject
 		Fan		// Веер
 	}
 	[SerializeField] private ShotType shotType;
+	public ShotType GetShotType => shotType;
 
 	[Tooltip("Для Burst и Fan")]
-	[SerializeField] private int bulletsPerShot;
+	[SerializeField] private int projectilesPerShot;
+	public int ProjectilesPerShot => projectilesPerShot;
 
 	[Space(15)]
 	[Tooltip("Максималное колличество пуль этого оружия в сцене")]
-	[SerializeField] private int maxBulletsCount;
-	
-
-	public string WeaponName => weaponName;
-	public Sprite Icon => icon;
-	public Bullet BulletPefab => bulletPefab;
-	
-	public float ReloadTime => reloadTime;
-	public ShotType GetShotType => shotType;
-
-	public int BulletsPerShot => bulletsPerShot;
-
-	public int MaxBulletsCount => maxBulletsCount;
+	[SerializeField] private int maxProjectileCount;
+	public int MaxProjectilesCount => maxProjectileCount;
 }

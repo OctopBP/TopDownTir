@@ -2,18 +2,21 @@
 using UnityEngine;
 using System;
 
+#pragma warning disable 0649
+
 public class PlayerShooting : MonoBehaviour
 {
 	[Header("Список оружия")]
 	[SerializeField] private GameObject weaponsContainer;
 
-	private List<WeaponBehavior> weapons = new List<WeaponBehavior>();
+	private List<IWeapon> weapons = new List<IWeapon>();
 	private int selectedWeaponNumber = 0;
-	public WeaponBehavior selectedWeapon { get { return weapons[selectedWeaponNumber]; } }
+	public IWeapon selectedWeapon { get { return weapons[selectedWeaponNumber]; } }
 
-	public event Action<WeaponBehavior, int, int> WeaponChanged = delegate {};
+	public event Action<IWeapon, int, int> WeaponChanged = delegate {};
 
 	private void Start() {
+		// Добарляем всё оружие в список
 		foreach (Transform weapon in weaponsContainer.transform) {
 			weapons.Add(weapon.GetComponent<WeaponBehavior>());
 		}

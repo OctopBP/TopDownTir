@@ -9,14 +9,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a12294e40b6544fe812455a9daf1091, type: 3}
+  m_Script: {fileID: 11500000, guid: 4b088e28fc22d4c10aeccfc2445ca477, type: 3}
   m_Name: Shotgun
   m_EditorClassIdentifier: 
   weaponName: Shotgun
   icon: {fileID: 21300000, guid: e8a56bf5d52d54fcf9459589b815c342, type: 3}
-  bulletPefab: {fileID: 1400727411472755249, guid: e761fef9f7191442c86967f0407cf4a6,
+  projectilePefab: {fileID: 1400727411472755249, guid: e761fef9f7191442c86967f0407cf4a6,
     type: 3}
   reloadTime: 2
   shotType: 2
-  bulletsPerShot: 5
-  maxBulletsCount: 10
+  projectilesPerShot: 5
+  maxProjectileCount: 10

@@ -90,10 +90,11 @@ GameObject:
   - component: {fileID: 5439696673238602874}
   - component: {fileID: 5439696673238602877}
   - component: {fileID: 5439696673238602876}
+  - component: {fileID: 5034160589275440369}
   - component: {fileID: 5439696673238602879}
   m_Layer: 0
-  m_Name: Enemy
-  m_TagString: Untagged
+  m_Name: Target
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -149,7 +150,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: deef796a02e7547f891130d7f78152fa, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
@@ -170,13 +171,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 5439696673238602878}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 313389327e126405bbbbcfd11d7124b0, type: 3}
+  m_Script: {fileID: 11500000, guid: 5d6397d84eeea44868ebd33844433e14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   marker: {fileID: 246643905454061897}
-  scorePrefab: {fileID: 3332107284736371571, guid: 1036a832e6b154ef8a44417086fc0df0,
+  markerOffset: 2
+--- !u!114 &5034160589275440369
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5439696673238602878}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1faab7076c6d449fb947c5a96c51227b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scorePrefab: {fileID: 5239975704061164994, guid: fe61dd41af69144ccb7c50247eaf00b3,
     type: 3}
-  markerOffset: 3
 --- !u!70 &5439696673238602879
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
