@@ -294,7 +294,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98eb78c5061874a8eb19ebedbcbeae22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 4
+  enemyStat: {fileID: 11400000, guid: df776249a354d4d5c995ae0d3f0f63d5, type: 2}
 --- !u!114 &6074753472893675395
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -308,9 +308,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HpBar: {fileID: 5887448530503750071}
-  MaxHp: 250
   dmgPrefab: {fileID: 5239975704061164994, guid: f24fcc9c58a004f3394727bb27935e82,
     type: 3}
+  enemyStat: {fileID: 11400000, guid: df776249a354d4d5c995ae0d3f0f63d5, type: 2}
 --- !u!114 &8426701108836949090
 MonoBehaviour:
   m_ObjectHideFlags: 0

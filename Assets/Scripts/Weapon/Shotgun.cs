@@ -9,7 +9,7 @@ public class Shotgun: WeaponBehavior
 			var angleZ = deltaAngle * ((float) i - (((float) weaponData.ProjectilesPerShot - 1) / 2f));
 			var projectileRotation = transform.eulerAngles.With(z: angleZ);
 
-			SetupProjectile(transform.position, Quaternion.Euler(projectileRotation));
+			bulletPool.SetupProjectile(transform.position, Quaternion.Euler(projectileRotation));
 		}
 	}
 }

@@ -2,22 +2,16 @@ using UnityEngine;
 
 #pragma warning disable 0649
 
-public class Rocket : Projectile
+public class Missile : Projectile
 {
 	[SerializeField] private string enemyTagName = "Enemy";
 
 	[Space(15)]
-	[SerializeField] private float speed = 5;
+	[SerializeField] private MissileData stat;
 	[SerializeField] private float turnSpeed = 50;
-	[SerializeField] private float turnSpeedMultiplayer = 50;
-
-	[SerializeField] private int damage = 150;
-
-	[SerializeField] private float maxDetectionDistance = 10;
 
 	[Space(15)]
 	[SerializeField] private GameObject explPrefab;
-	[SerializeField] private float explRadius = 3;
 
 	private Transform target;
 
@@ -27,7 +21,7 @@ public class Rocket : Projectile
 
 	private void GetTarget() {
 		// Получаем все таргеты в радиусе обнаружения
-		var colliders = Physics2D.OverlapCircleAll(transform.position, maxDetectionDistance);
+		var colliders = Physics2D.OverlapCircleAll(transform.position, stat.MaxDetectionDistance);
 
 		// Находим ближайшую мишень
 		var minDistanse = Mathf.Infinity;
@@ -43,7 +37,7 @@ public class Rocket : Projectile
 	}
 	
 	public override void OnUpdate() {
-        transform.position += transform.right * speed * Time.deltaTime;
+        transform.position += transform.right * stat.Speed * Time.deltaTime;
 
 		// Поворачиваем к цели
 		if (target != null) {
@@ -55,7 +49,7 @@ public class Rocket : Projectile
 		}
 
 		// Увеличиваем скорость вращения, чтобы избежать бесконечных кругов
-		turnSpeed += Time.deltaTime * turnSpeedMultiplayer;
+		turnSpeed += Time.deltaTime * stat.TurnSpeedMultiplayer;
 	}
 
 	private void OnTriggerEnter2D(Collider2D other) {
@@ -67,10 +61,10 @@ public class Rocket : Projectile
 			Destroy(expl, 3);
 
 			// Наносим урон всем врагам в радиусе взрыва
-			var col = Physics2D.OverlapCircleAll(transform.position, explRadius);
+			var col = Physics2D.OverlapCircleAll(transform.position, stat.ExplRadius);
 			foreach (var c in col) {
 				if (c.CompareTag(enemyTagName)) {
-					c.GetComponent<EnemyHP>().TakeDamage(damage);
+					c.GetComponent<EnemyHP>().TakeDamage(stat.Damage);
 				}
 			}
 		}

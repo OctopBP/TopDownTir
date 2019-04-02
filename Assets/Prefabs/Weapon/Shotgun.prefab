@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7357747912626413484}
   - component: {fileID: 1084314968995606471}
+  - component: {fileID: 1951375547765169437}
   m_Layer: 0
   m_Name: Shotgun
   m_TagString: Untagged
@@ -44,3 +45,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponData: {fileID: 11400000, guid: fb88999dc64fc4c729b5d929c1f922f3, type: 2}
+--- !u!114 &1951375547765169437
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7357747912626413474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69b3f2767d5c54841b7df89aacf366ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxProjectileCount: 10
+  projectilePefab: {fileID: 1400727411472755249, guid: e761fef9f7191442c86967f0407cf4a6,
+    type: 3}

@@ -13,10 +13,6 @@ public class WeaponData : ScriptableObject
 	public Sprite Icon => icon;
 
 	[Space(15)]
-	[SerializeField] private Projectile projectilePefab;
-	public Projectile ProjectilePefab => projectilePefab;
-
-	[Space(15)]
 	[SerializeField] private float reloadTime;
 	public float ReloadTime => reloadTime;
 
@@ -31,9 +27,4 @@ public class WeaponData : ScriptableObject
 	[Tooltip("Для Burst и Fan")]
 	[SerializeField] private int projectilesPerShot;
 	public int ProjectilesPerShot => projectilesPerShot;
-
-	[Space(15)]
-	[Tooltip("Максималное колличество пуль этого оружия в сцене")]
-	[SerializeField] private int maxProjectileCount;
-	public int MaxProjectilesCount => maxProjectileCount;
 }

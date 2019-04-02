@@ -5,14 +5,13 @@
 public class EnemyHP : MonoBehaviour
 {
 	[SerializeField] private Transform HpBar;
-
-	[SerializeField] private int MaxHp;
-	private int hp;
-
 	[SerializeField] private GameObject dmgPrefab;
 
+	[SerializeField] private EnemyStat enemyStat;
+	private int hp;
+
     private void Start() {
-        hp = MaxHp;
+        hp = enemyStat.MaxHp;
     }
 
     private void Update() {
@@ -25,7 +24,7 @@ public class EnemyHP : MonoBehaviour
 		hp -= dmg;
 
 		// Скейлим хп бар
-		HpBar.transform.localScale = new Vector3((float) hp / MaxHp, 1, 1);
+		HpBar.transform.localScale = new Vector3((float) hp / enemyStat.MaxHp, 1, 1);
 
 		// Создаём текст урона
 		var dmgText = Instantiate(dmgPrefab, transform.position, Quaternion.identity);

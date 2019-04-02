@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 8152087276878282711}
   - component: {fileID: 3839371888885257071}
   - component: {fileID: 7347358696533685851}
-  - component: {fileID: 210307927345096206}
   - component: {fileID: 234808868307596858}
+  - component: {fileID: 210307927345096206}
   m_Layer: 0
-  m_Name: Rocket
+  m_Name: Missile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -108,27 +108,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.95, y: 0.2}
   m_EdgeRadius: 0
---- !u!114 &210307927345096206
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5869923800158726576}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e4cc34d5d310f4d6b906c4de30934556, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyTagName: Enemy
-  speed: 10
-  turnSpeed: 50
-  turnSpeedMultiplayer: 50
-  damage: 500
-  maxDetectionDistance: 10
-  explPrefab: {fileID: 4308765516136973362, guid: d1ada6436470c453bb44282d8be71900,
-    type: 3}
-  explRadius: 3
 --- !u!50 &234808868307596858
 Rigidbody2D:
   serializedVersion: 4
@@ -150,3 +129,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
+--- !u!114 &210307927345096206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5869923800158726576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4387c7efb28c94f3d96ed88caa5160cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyTagName: Enemy
+  stat: {fileID: 11400000, guid: 454547c40c91f4ea9b93ab299572a522, type: 2}
+  turnSpeed: 50
+  explPrefab: {fileID: 4308765516136973362, guid: d1ada6436470c453bb44282d8be71900,
+    type: 3}
